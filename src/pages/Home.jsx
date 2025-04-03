@@ -4,6 +4,8 @@ import Title from "../componets/main/Title";
 import ProductList from "../componets/main/ProductList";
 import Footer from "../componets/footer/Footer";
 
+import products from "../json/books.json"
+
 function Home() {
     return (
         <div className="main-layout">
@@ -12,7 +14,7 @@ function Home() {
             </Helmet>
             <Header />
             <Title  className="title" />
-            <ProductList className="content" />
+            <ProductList className="content" data={products} />
             <Footer className="footer" />
         </div>
     );
