@@ -6,14 +6,17 @@ body {
   line-height: 1.6;
 }
 
-.main{
+main {
   width: 70%;
+  min-height: 100vh;
+  margin-inline: auto;
+  min-width: 520px;
 }
 
 .main-layout {
   display: grid;
   min-height: 100vh;
-  grid-template-areas: 
+  grid-template-areas:
     'header'
     'title'
     'content'
@@ -27,7 +30,7 @@ body {
   grid-area: header;
 }
 
-.title{
+.title {
   grid-area: title;
 }
 
@@ -37,4 +40,32 @@ body {
 
 .footer {
   grid-area: footer;
+}
+
+/* 依高度自動裁切文字 */
+.clamp-text {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* 金邊 */
+.border_round {
+  border-style: var(--tw-border-style);
+  border-width: 1px;
+  border-radius: 0.25rem;
+}
+
+/*  */
+.btn {
+  cursor: pointer;
+  background-color: #1a1a1a;
+  border: 1px solid #0000;
+  border-radius: 8px;
+  padding: .6em 1.2em;
+  font-family: inherit;
+  font-size: 1em;
+  font-weight: 500;
+  transition: border-color .25s;
 }

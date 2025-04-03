@@ -6,6 +6,7 @@ import { BrowserRouter, Routes, Route } from 'react-router'
 import './App.css'
 
 import Home from './pages/Home'
+import Product from './pages/Product'
 
 function App() {
   return (
@@ -13,6 +14,9 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path='/' element={<Home />} />
+          <Route path='products'>
+            <Route path='id/:bookId' element={<Product />} />
+          </Route>
         </Routes>
       </BrowserRouter>
     </HelmetProvider>
