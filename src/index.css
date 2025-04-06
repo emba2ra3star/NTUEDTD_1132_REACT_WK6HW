@@ -18,7 +18,6 @@ main {
   min-height: 100vh;
   grid-template-areas:
     'header'
-    'title'
     'content'
     'footer'
   ;
@@ -28,10 +27,6 @@ main {
 
 .header {
   grid-area: header;
-}
-
-.title {
-  grid-area: title;
 }
 
 .content {

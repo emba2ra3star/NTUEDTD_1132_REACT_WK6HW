@@ -11,7 +11,7 @@ function ProductItem({ data }) {
                             <span className="font-bold italic text-base-content">{data.title}</span>
                             <p className="text-sm opacity-80 text-amber-100">{data.author}</p>
                             <p className="text-xs opacity-60 clamp-text">{data.summary}</p>
-                            <p className="text-xs opacity-80 justify-self-end mt-1 pr-2">$ {data.price} US</p>
+                            <p className="text-xs opacity-80 justify-self-end mt-1 pr-2">$US{data.price}</p>
                         </div>
                     </Link>
                 </div>

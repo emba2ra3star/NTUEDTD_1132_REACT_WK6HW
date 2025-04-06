@@ -1,7 +1,6 @@
 import { Helmet } from "react-helmet-async";
 
 import Header from "../componets/header/Header"
-import Title from "../componets/main/Title";
 import ProductList from "../componets/main/ProductList";
 import Footer from "../componets/footer/Footer";
 import { useParams } from "react-router";
@@ -14,20 +13,16 @@ function Product() {
     const bookData = products.find(
         (x) => (x.ID === Number(bookId))
     );
-    const title="Book Detail";
+    const title = "Book Detail";
 
     return (
         <div className="main-layout">
             <Helmet>
-                <title>WK6|ProductInfo page</title>
+                <title>WK6｜{title}</title>
             </Helmet>
-
-            <Header />
-            <main className="container content bg-base-100">
-                <Title className="title" title={title} />
-                {bookData ? <ProductDetail data={bookData} /> : <p>Not Found</p>}
-            </main>
-            <Footer />
+            <Header className="header" title={title} />
+            {bookData ? <ProductDetail className="content" data={bookData} /> : <p className="content">Not Found</p>}
+            <Footer className="footer"/>
         </div>
     );
 }
