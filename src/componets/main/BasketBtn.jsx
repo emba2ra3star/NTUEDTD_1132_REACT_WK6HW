@@ -5,7 +5,7 @@ function BasketBtn({data ,qty}) {
     const dispatch = useDispatch();
     const addToCart=()=>(
         dispatch(addCartItems({
-            id:data.id,
+            ID:data.ID,
             name:data.title,
             img:data.cover,
             price:data.price,
