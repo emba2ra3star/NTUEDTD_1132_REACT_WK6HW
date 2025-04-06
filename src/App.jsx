@@ -7,19 +7,24 @@ import './App.css'
 
 import Home from './pages/Home'
 import Product from './pages/Product'
+import { Provider } from 'react-redux'
+
+import store from './redux/store'
 
 function App() {
   return (
-    <HelmetProvider>
-      <BrowserRouter>
-        <Routes>
-          <Route path='/' element={<Home />} />
-          <Route path='products'>
-            <Route path='id/:bookId' element={<Product />} />
-          </Route>
-        </Routes>
-      </BrowserRouter>
-    </HelmetProvider>
+    <Provider store={store}>
+      <HelmetProvider>
+        <BrowserRouter>
+          <Routes>
+            <Route path='/' element={<Home />} />
+            <Route path='products'>
+              <Route path='id/:bookId' element={<Product />} />
+            </Route>
+          </Routes>
+        </BrowserRouter>
+      </HelmetProvider>
+    </Provider>
   )
 }
 

@@ -19,7 +19,6 @@ function Footer() {
                             <p className="text-gray-300">02 2732 1104</p>
                         </div>
                     </div>
-
                     <p className="mx-auto opacity-60">
                         © 2006 - 2023 Copyright Digital Technology Design
                     </p>

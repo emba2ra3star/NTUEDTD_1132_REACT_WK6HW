@@ -1,7 +1,8 @@
 import { useState } from "react";
+import BasketBtn from "./BasketBtn";
 
 function ProductDetail({ data }) {
-    const [Qty, setQty] = useState(data.stock > 0 ? 1 : 0)
+    const [qty, setQty] = useState(data.stock > 0 ? 1 : 0)
     return (
         <main className="container content bg-base-100">
             <div className="flex flex-col-2 gap-6 mt-8 p-4 border_round border-amber-400">
@@ -17,15 +18,15 @@ function ProductDetail({ data }) {
                         <p><span className="font-bold text-sm opacity-60">Status</span>: {data.stock > 0 ? "In stock" : "Unavailable"}</p>
                         <div className="flex flex-row items-center gap-2">
                             <span className="font-bold text-sm opacity-60">Qty:</span>
-                            <select className="select-borderer w-20 bg-base-300 border_round border-amber-50" defaultValue={data.stock > 0 ? 1 : 0} onChange={event=>setQty(event.target.value)}>
-                                {Array(data.stock).keys().map((x) => (
+                            <select className="select-borderer w-20 bg-base-300 border_round border-amber-50" defaultValue={data.stock > 0 ? 1 : 0} onChange={event=>setQty(Number(event.target.value))}>
+                                {[...Array(data.stock).keys().map((x) => (
                                     <option key={x + 1} value={x + 1}>{x + 1}</option>
-                                ))}
+                                ))]}
                             </select>
                         </div>
-                        <p><span className="font-bold text-sm opacity-60">Toltal Price: </span>{Qty * data.price}</p>
+                        <p><span className="font-bold text-sm opacity-60">Toltal Price: </span>{qty * data.price}</p>
                     </div>
-                    <button className="btn mt-auto mb-8">Add to cart</button>
+                    <BasketBtn data={data} qty={qty}/>
                 </div>
             </div>
         </main>
